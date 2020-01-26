@@ -5,11 +5,12 @@ $(document).ready(function () {
     var indexImg = $img.length - 1; // on définit l'index du dernier élément
     var i = 0; // on initialise un compteur
     var $currentImg = $img.eq(i); // enfin, on cible l'image courante, qui possède l'index i (0 pour l'instant)
+    var $timeLapse = 3000;
 
     $img.css('display', 'none'); // on cache les images
     $currentImg.css('display', 'block'); // on affiche seulement l'image courante
 
-    $carousel.append('<div class="controls"> <span class="prev">Precedent</span> <span class="next">Suivant</span> </div>');
+    $carousel.append('<div class="controls"> <span class="prev"><i class="fa fa-angle-left"></i></span> <span class="next"><i class="fa fa-angle-right"></i></span> </div>');
 
 
     $('.next').click(function () { // image suivante
@@ -56,7 +57,7 @@ $(document).ready(function () {
 
             slideImg(); // on oublie pas de relancer la fonction à la fin
 
-        }, 7000); // on définit l'intervalle à 7000 millisecondes (7s)
+        }, $timeLapse); // on définit l'intervalle à 3000 millisecondes (3s)
     }
 
     slideImg(); // enfin, on lance la fonction une première fois
